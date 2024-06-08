@@ -5,11 +5,9 @@ const router = express.Router();
 
 router.get('/codeforces', async (req, res) => {
     try {
-        //console.log("inside request");
         const response = await axios.get('https://codeforces.com/api/contest.list');
         const contests = response.data.result;
         const upcomingContests = contests.filter(contest => contest.phase === 'BEFORE');
-        //console.log(upcomingContests);
         res.json(upcomingContests);
     } catch (error) {
         res.status(500).send('Error fetching contests from Codeforces');
