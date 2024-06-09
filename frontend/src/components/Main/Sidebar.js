@@ -14,7 +14,7 @@ function Sidebar() {
             <Link to='/calendar'>Calendar</Link>
           </div>
           <div className='sidebar-option'>
-            <Link>PUBLIC</Link>
+            <Link to='/profile'>PROFILE</Link>
             <div className='link'>
               <div className='link-tag'>
                 <PublicIcon />

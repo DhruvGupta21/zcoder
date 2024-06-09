@@ -10,6 +10,7 @@ import { login, logout, selectUser } from './features/userSlice';
 import { useSelector, useDispatch } from 'react-redux';
 import { auth } from './firebase';
 import Calendar from './components/Calendar';
+import Profile from './components/Profile/Profile';
 
 function PrivateRoute({ element: Element, ...rest }) {
   const user = useSelector(selectUser);
@@ -51,6 +52,7 @@ function App() {
           <Route path="/add-question" element={<PrivateRoute element={Question} />} />
           <Route path="/question" element={<PrivateRoute element={ViewQuestion} />} />
           <Route path="/calendar" element={<PrivateRoute element={Calendar} />} />
+          <Route path="/profile" element={<PrivateRoute element={Profile} />} />
 
           {/* <Route path="/" element={Main} />
           <Route path="/add-question" element={Question} />

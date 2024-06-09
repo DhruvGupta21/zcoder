@@ -1,12 +1,16 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import GoogleIcon from '@mui/icons-material/Google';
 import './index.css';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
 import { auth, provider } from '../../firebase';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+//import { login, updateProfile } from '../../features/userSlice';
+import axios from 'axios';
 
 function Index() {
     const navigate = useNavigate();
+    const dispatch = useDispatch();
     const [register, setRegister] = useState(false);
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -14,16 +18,27 @@ function Index() {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState("");
 
+    const createUser = async (user) => {
+        try {
+            await axios.post('/api/users/create', {
+                uid: user.uid,
+                bio: "No current bio",
+            });
+        } catch (error) {
+            console.error("Error creating user:", error);
+        }
+    };
+
     const handleSignInGoogle = () => {
         signInWithPopup(auth, provider).then((res) => {
-            console.log(res);
+            const user = res.user;
+            createUser(user);
             navigate("/");
         }).catch((error) => {
-            console.log(error.code);
             setError(error.message);
             setLoading(false);
-        })
-    }
+        });
+    };
 
     const handleRegister = (e) => {
         e.preventDefault();
@@ -70,7 +85,7 @@ function Index() {
     return (
         <div className='auth'>
             <div className='auth-container'>
-                <p>Add another way to log in using any of the following services</p>
+                <p>ZCoder - One-Stop Destination for All Your Coding Needs</p>
                 <div className='sign-options'>
                     <div className='single-option' onClick={handleSignInGoogle}>
                         <GoogleIcon />
@@ -78,8 +93,8 @@ function Index() {
                     </div>
                     <div className='auth-login'>
                         <div className='auth-login-container'>
-                            {
-                                register ? (<>
+                            {register ? (
+                                <>
                                     <div className='input-field'>
                                         <p>Username</p>
                                         <input value={username} onChange={(e) => setUsername(e.target.value)} type='text' />
@@ -92,14 +107,12 @@ function Index() {
                                         <p>Password</p>
                                         <input value={password} onChange={(e) => setPassword(e.target.value)} type='password' />
                                     </div>
-                                    <button
-                                        onClick={handleRegister}
-                                        disabled={loading}
-                                        style={{
-                                            marginTop: "10px"
-                                        }}
-                                    >{loading ? 'Saving Info...' : 'Register'}</button>
-                                </>) : (<>
+                                    <button onClick={handleRegister} disabled={loading} style={{ marginTop: "10px" }}>
+                                        {loading ? 'Saving Info...' : 'Register'}
+                                    </button>
+                                </>
+                            ) : (
+                                <>
                                     <div className='input-field'>
                                         <p>Email</p>
                                         <input value={email} onChange={(e) => setEmail(e.target.value)} type='email' />
@@ -108,36 +121,27 @@ function Index() {
                                         <p>Password</p>
                                         <input value={password} onChange={(e) => setPassword(e.target.value)} type='password' />
                                     </div>
-                                    <button
-                                        onClick={handleSignIn}
-                                        disabled={loading}
-                                        style={{
-                                            marginTop: "10px"
-                                        }}>{loading ? 'Signing In...' : 'Login'}</button>
-                                </>)
-                            }
+                                    <button onClick={handleSignIn} disabled={loading} style={{ marginTop: "10px" }}>
+                                        {loading ? 'Signing In...' : 'Login'}
+                                    </button>
+                                </>
+                            )}
                             <p onClick={() => setRegister(!register)} style={{
                                 marginTop: "10px",
                                 textAlign: "center",
                                 color: '#0095ff',
                                 textDecoration: 'underline',
                                 cursor: 'pointer'
-                            }}
-                            >{register ? "Login?" : "Register?"}</p>
+                            }}>
+                                {register ? "Login?" : "Register?"}
+                            </p>
                         </div>
                     </div>
                 </div>
-                {
-                    error !== "" && (<p style={
-                        {
-                            color: "red",
-                            fontSize: "15px",
-                        }
-                    }>{error}</p>)
-                }
+                {error && <p style={{ color: "red", fontSize: "15px" }}>{error}</p>}
             </div>
         </div>
-    )
+    );
 }
 
-export default Index
+export default Index;

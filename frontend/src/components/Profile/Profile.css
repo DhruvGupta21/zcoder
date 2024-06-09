@@ -1,0 +1,63 @@
+.profile-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.profile-avatar {
+    width: 100px !important;
+    height: 100px !important;
+    margin: 0 auto 20px;
+}
+
+.profile-container h1 {
+    margin: 10px 0;
+    font-size: 24px;
+}
+
+.profile-container h3 {
+    margin: 5px 0;
+    font-size: 18px;
+    color: gray;
+}
+
+.profile-container h5 {
+    font-size: 16px;
+    margin: 20px 0;
+}
+
+.profile-container button {
+    background: #0095ff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.profile-container button:hover {
+    background: #007acc;
+}
+
+.profile-container input,
+.profile-container textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    resize: none;
+    height: 10px;
+}
+
+.profile-container textarea {
+    height: 50px;
+}

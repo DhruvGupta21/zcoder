@@ -33,7 +33,7 @@ app.get('*', (req, res) => {
     try {
         res.sendFile(path.join(`${__dirname}/../frontend/build/index.html`))
     } catch (error) {
-        res.send('error occured bsdk');
+        res.send('error occured');
         console.log(error);
     }
 })
