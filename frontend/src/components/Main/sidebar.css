@@ -26,6 +26,25 @@
     font-size: 14px;
 }
 
+.sidebar-option-name {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0;
+    font-size: 14px;
+    flex-direction: row;
+}
+
+.sidebar-option-name>.MuiSvgIcon-root {
+    font-size: 18px;
+    margin-right: 5px;
+    color: rgba(245, 162, 9);
+}
+
+.sidebar-option-name>p {
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 14px;
+}
+
 a {
     text-decoration: none;
     color: rgba(0, 0, 0, 0.5);

@@ -11,6 +11,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { auth } from './firebase';
 import Calendar from './components/Calendar';
 import Profile from './components/Profile/Profile';
+import CodeEditor from './components/CodeEditor/CodeEditor';
 
 function PrivateRoute({ element: Element, ...rest }) {
   const user = useSelector(selectUser);
@@ -53,13 +54,9 @@ function App() {
           <Route path="/question" element={<PrivateRoute element={ViewQuestion} />} />
           <Route path="/calendar" element={<PrivateRoute element={Calendar} />} />
           <Route path="/profile" element={<PrivateRoute element={Profile} />} />
+          <Route path="/zcoderIDE" element={<PrivateRoute element={CodeEditor} />} />
 
-          {/* <Route path="/" element={Main} />
-          <Route path="/add-question" element={Question} />
-          <Route path="/question" element={ViewQuestion} />
-          <Route path="/calendar" element={EventCalendar} /> */}
 
-          {/* <Route path="*" element={<Navigate to={user ? "/" : "/auth"} />} /> */}
         </Routes>
       </Router>
     </div>
