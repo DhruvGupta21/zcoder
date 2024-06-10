@@ -37,7 +37,7 @@ function Header() {
                     <div className='header-right-container'>
                         {/* <span onClick={handleSignOut}><Avatar src={user?.photo} /></span> */}
                         <Link to='/profile'><Avatar src={user?.photo} className="avatar2" /></Link>
-                        <InboxIcon />
+                        <Link to='/calendar'><InboxIcon className='calendar' /></Link>
                     </div>
                 </div>
             </div>

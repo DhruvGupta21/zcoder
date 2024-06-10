@@ -19,14 +19,11 @@ function AllQuestions({ question }) {
                     <div className='all-options'>
                         <div className='all-option'>
                             <p>0</p>
-                            <span>Votes</span>
+                            <p>Votes</p>
                         </div>
                         <div className='all-option'>
                             <p>{question?.answerDetails?.length}</p>
-                            <span>Answers</span>
-                        </div>
-                        <div className='all-option'>
-                            <small>0 views</small>
+                            <p>Answers</p>
                         </div>
                     </div>
                 </div>
@@ -35,7 +32,7 @@ function AllQuestions({ question }) {
                     <div style={{
                         width: "90%"
                     }}>
-                        <div>{ReactHtmlParser(truncate(question?.body, 200))}</div>
+                        <div style={{ fontSize: '18px' }}>{ReactHtmlParser(truncate(question?.body, 800))}</div>
                     </div>
                     <div style={{
                         display: "flex"

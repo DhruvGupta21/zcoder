@@ -1,11 +1,22 @@
+.profile-home {
+    display: flex;
+    background-color: rgba(34, 34, 34, 0.8);
+    min-width: 400px;
+    min-height: 640px;
+}
+
 .profile-container {
     max-width: 600px;
+    min-width: 600px;
     margin: 0 auto;
     padding: 20px;
-    background: white;
+    background: #2b2b2b;
+    /* Dark background */
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
+    color: #fff;
+    /* Light text color */
 }
 
 .profile-avatar {
@@ -17,6 +28,8 @@
 .profile-container h1 {
     margin: 10px 0;
     font-size: 24px;
+    color: #fff;
+    /* Light text color */
 }
 
 .profile-container h3 {
@@ -28,6 +41,8 @@
 .profile-container h5 {
     font-size: 16px;
     margin: 20px 0;
+    color: #fff;
+    /* Light text color */
 }
 
 .profile-container button {
@@ -42,8 +57,8 @@
     margin-right: 10px;
 }
 
-.profile-container button:hover {
-    background: #007acc;
+.profile-container button {
+    background: #212121;
 }
 
 .profile-container input,
@@ -51,13 +66,23 @@
     width: 100%;
     padding: 10px;
     margin: 10px 0;
-    border: 1px solid #ddd;
+    border: 1px solid #555;
+    /* Darker border */
     border-radius: 5px;
     font-size: 16px;
+    background: #444;
+    /* Dark background */
+    color: #fff;
+    /* Light text color */
     resize: none;
-    height: 10px;
 }
 
 .profile-container textarea {
     height: 50px;
+}
+
+.profile-container input::placeholder,
+.profile-container textarea::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+    /* Light placeholder color */
 }

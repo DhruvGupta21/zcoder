@@ -96,12 +96,15 @@ function Question() {
                                     value={tags}
                                     onChange={setTags}
                                     name='tags'
-                                    placeHolder='press Enter to add new tag' />
+                                    placeHolder='press Enter to add new tag'
+                                    color='black'
+                                    classNames='tags-input'
+                                />
                             </div>
                         </div>
                     </div>
                 </div>
-                <button disabled={loading} type='submit' onClick={handleSubmit} className='button'>{
+                <button disabled={loading} type='submit' onClick={handleSubmit} className='ask-button'>{
                     loading ? 'Adding to database' : 'Add your question'
                 }</button>
             </div>

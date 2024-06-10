@@ -56,25 +56,27 @@ function Profile() {
     };
 
     return (
-        <div className="profile-container">
-            <Avatar src={user?.photo} alt={user?.displayName} className="profile-avatar" />
-            <h1>{user?.displayName}</h1>
-            <h3>{user?.email}</h3>
-            {editMode ? (
-                <>
-                    <textarea rows={5} value={newBio} onChange={(e) => setNewBio(e.target.value)} placeholder="Bio" />
-                    <button onClick={saveBio}>Save</button>
-                </>
-            ) : (
-                <>
-                    <h5>{bio}</h5>
-                    <button onClick={() => {
-                        setNewBio(bio);
-                        setEditMode(true);
-                    }}>Edit Profile</button>
-                    <button onClick={handleSignOut}>Sign Out</button>
-                </>
-            )}
+        <div className='profile-home'>
+            <div className="profile-container">
+                <Avatar src={user?.photo} alt={user?.displayName} className="profile-avatar" />
+                <h1>{user?.displayName}</h1>
+                <h3>{user?.email}</h3>
+                {editMode ? (
+                    <>
+                        <textarea rows={5} value={newBio} onChange={(e) => setNewBio(e.target.value)} placeholder="Bio" />
+                        <button onClick={saveBio}>Save</button>
+                    </>
+                ) : (
+                    <>
+                        <h5>{bio}</h5>
+                        <button onClick={() => {
+                            setNewBio(bio);
+                            setEditMode(true);
+                        }}>Edit Profile</button>
+                        <button onClick={handleSignOut}>Sign Out</button>
+                    </>
+                )}
+            </div>
         </div>
     );
 }

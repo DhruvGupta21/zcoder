@@ -1,26 +1,29 @@
-import React from 'react'
-import PublicIcon from '@mui/icons-material/Public'
+import React from 'react';
+import PublicIcon from '@mui/icons-material/Public';
 import TerminalIcon from '@mui/icons-material/Terminal';
 import SendIcon from '@mui/icons-material/Send';
 import { Link } from 'react-router-dom';
 import NotificationImportantIcon from '@mui/icons-material/NotificationImportant';
+
 import './sidebar.css';
 import { signOut } from 'firebase/auth';
 import { auth } from '../../firebase';
 
 function Sidebar() {
-
   const handleSignOut = () => {
-    signOut(auth).then(() => {
-      // Sign-out successful
-    }).catch((error) => {
-      // An error happened
-      console.error("Error signing out:", error);
-    });
+    signOut(auth)
+      .then(() => {
+        // Sign-out successful
+      })
+      .catch((error) => {
+        // An error happened
+        console.error("Error signing out:", error);
+      });
   };
 
   return (
     <div className='sidebar'>
+
       <div className='sidebar-container'>
         <div className='sidebar-options'>
           <div className='link-tag'>
@@ -42,7 +45,6 @@ function Sidebar() {
               <div className='link-tag'>
                 <Link onClick={handleSignOut}>Sign Out</Link>
               </div>
-
             </div>
           </div>
           <div className='sidebar-option'>
@@ -70,7 +72,7 @@ function Sidebar() {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default Sidebar
+export default Sidebar;

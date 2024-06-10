@@ -4,13 +4,10 @@ import './index.css';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
 import { auth, provider } from '../../firebase';
 import { useNavigate } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
-//import { login, updateProfile } from '../../features/userSlice';
 import axios from 'axios';
 
 function Index() {
     const navigate = useNavigate();
-    const dispatch = useDispatch();
     const [register, setRegister] = useState(false);
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -47,8 +44,7 @@ function Index() {
         if (email === "" || password === "" || username === "") {
             setError('Reduired field/s are missing');
             setLoading(false);
-        }
-        else {
+        } else {
             createUserWithEmailAndPassword(auth, email, password).then((res) => {
                 console.log(res);
                 setLoading(false);
@@ -68,8 +64,7 @@ function Index() {
         if (email === "" || password === "") {
             setError('Reduired field/s are missing');
             setLoading(false);
-        }
-        else {
+        } else {
             signInWithEmailAndPassword(auth, email, password).then((res) => {
                 console.log(res);
                 setLoading(false);
@@ -85,7 +80,8 @@ function Index() {
     return (
         <div className='auth'>
             <div className='auth-container'>
-                <p>ZCoder - One-Stop Destination for All Your Coding Needs</p>
+                <img src="/uploads/Zcoder-logo.png" alt="Project Logo" className='logo' />
+                <p>One Stop Destination for All Your Coding Needs</p>
                 <div className='sign-options'>
                     <div className='single-option' onClick={handleSignInGoogle}>
                         <GoogleIcon />
@@ -107,7 +103,7 @@ function Index() {
                                         <p>Password</p>
                                         <input value={password} onChange={(e) => setPassword(e.target.value)} type='password' />
                                     </div>
-                                    <button onClick={handleRegister} disabled={loading} style={{ marginTop: "10px" }}>
+                                    <button className='ask-button' onClick={handleRegister} disabled={loading} style={{ marginTop: "10px" }}>
                                         {loading ? 'Saving Info...' : 'Register'}
                                     </button>
                                 </>
@@ -121,18 +117,12 @@ function Index() {
                                         <p>Password</p>
                                         <input value={password} onChange={(e) => setPassword(e.target.value)} type='password' />
                                     </div>
-                                    <button onClick={handleSignIn} disabled={loading} style={{ marginTop: "10px" }}>
+                                    <button className='ask-button' onClick={handleSignIn} disabled={loading} style={{ marginTop: "10px" }}>
                                         {loading ? 'Signing In...' : 'Login'}
                                     </button>
                                 </>
                             )}
-                            <p onClick={() => setRegister(!register)} style={{
-                                marginTop: "10px",
-                                textAlign: "center",
-                                color: '#0095ff',
-                                textDecoration: 'underline',
-                                cursor: 'pointer'
-                            }}>
+                            <p onClick={() => setRegister(!register)} className='toggle-register'>
                                 {register ? "Login?" : "Register?"}
                             </p>
                         </div>

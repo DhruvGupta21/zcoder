@@ -132,13 +132,12 @@ function MainQuestion() {
             <div className='main-container'>
                 <div className='main-top'>
                     <h2 className='main-question'>{questionData?.title}</h2>
-                    <Link to='/add-question'><button>Ask a Question</button></Link>
+                    <Link to='/add-question'><button className='ask-button'>Ask Question</button></Link>
                 </div>
                 <div className='main-desc'>
                     <div className='info'>
                         <p>{new Date(questionData?.created_at).toLocaleString()}</p>
                         <p>Active<span>today</span></p>
-                        <p>Viewed<span>69 times</span></p>
                     </div>
                 </div>
                 <div className='all-questions'>
@@ -252,13 +251,16 @@ function MainQuestion() {
                     className='react-quill'
                     theme='snow'
                     modules={modules}
-                    style={{ height: "200px" }} />
+                    style={{
+                        border: "1px solid white"
+                    }}
+                />
                 <button
                     type='submit'
                     onClick={handleSubmit}
                     style={{
                         maxWidth: "fit-content",
-                        marginTop: '70px'
+                        marginTop: '5px'
                     }}>Post Your Answer</button>
             </div>
 

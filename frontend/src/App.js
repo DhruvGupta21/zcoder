@@ -25,7 +25,6 @@ function PrivateRoute({ element: Element, ...rest }) {
 
 
 function App() {
-  const user = useSelector(selectUser);
   const dispatch = useDispatch();
 
   useEffect(() => {

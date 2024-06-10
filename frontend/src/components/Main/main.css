@@ -3,12 +3,15 @@
     padding: 30px 10px;
     flex: 0.75;
     flex-direction: column;
+    background-color: rgb(105, 105, 105);
+    border: 3px solid white;
 }
 
 .main-container {
     display: flex;
     flex-direction: column;
     width: 100%;
+
 }
 
 .main-top {
@@ -21,26 +24,31 @@
 
 .main-top>h2 {
     font-weight: 400;
-    font-size: 25px;
-    color: rgba(0, 0, 0, 0.8);
+    font-size: 30px;
+    color: rgba(255, 255, 255, 0.8);
 }
 
 button {
     padding: 10px;
-    background-color: #0095ff;
+    background-color: #292929;
     color: #fff;
-    border: 2px solid #007cd446;
+    border: 2px solid #00000046;
     outline: none;
-    border-radius: 3px;
+    border-radius: 5px;
     cursor: pointer;
+    font-size: 15px;
+}
+
+button:hover {
+    background-color: #999999 !important;
 }
 
 .main-desc {
     display: flex;
     flex-direction: row;
     align-items: center;
-    font-size: 1.1rem;
-    color: rgba(0, 0, 0, 0.8);
+    font-size: 20px;
+    color: rgba(210, 210, 210, 0.8);
     justify-content: space-between;
     padding: 0px 0px 10px 0px;
     margin-top: 10px;
@@ -60,17 +68,18 @@ button {
 
 .main-tab {
     padding: 5px;
+    font-size: 20px;
 }
 
 .main-filter-item {
     display: flex;
     padding: 5px;
-    border: 1px solid #0095ff;
+    border: 2px solid #101010;
     border-radius: 3px;
-    background-color: #007cd446;
+    background-color: #0084ff4a;
     font-size: small;
     align-items: center;
-    color: #007cd4;
+    color: #000000;
     cursor: pointer;
 }
 

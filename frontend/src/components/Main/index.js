@@ -25,6 +25,7 @@ function Index() {
 
   return (
     <div className='stack-index'>
+
       <div className='stack-index-content'>
         <Sidebar />
         <Main questions={questions} />

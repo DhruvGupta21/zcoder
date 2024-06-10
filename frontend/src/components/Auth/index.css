@@ -1,9 +1,13 @@
 .auth {
     display: flex;
     flex-direction: column;
-    height: 90vh;
+    height: auto;
+    min-height: 580px;
     padding: 30px 0;
-    background-color: #eee;
+    background-color: #000000;
+    /* Dark background */
+    color: #fff;
+    /* Light text color */
 }
 
 .auth-container {
@@ -12,11 +16,19 @@
     width: 100%;
     align-items: center;
     justify-content: center;
+    text-align: center;
+    /* Centered text */
 }
 
 .auth-container>p {
     margin-bottom: 30px;
     font-size: 1.5rem;
+}
+
+.logo {
+    width: 200px;
+    height: auto;
+    margin-bottom: 20px;
 }
 
 .sign-options {
@@ -27,19 +39,23 @@
 
 .single-option {
     display: flex;
+    align-items: center;
     padding: 9px;
     margin: 5px 0;
     border-radius: 3px;
-    color: rgba(0, 0, 0, 0.8);
-    background-color: #fff;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-        0 6px 20px 0 rgba(66, 42, 42, 0.19);
+    color: rgba(255, 255, 255, 0.8);
+    /* Light text color */
+    background-color: #444;
+    /* Dark background */
+    box-shadow: 0 4px 8px 0 rgb(103, 103, 103),
+        0 6px 6px 0 rgba(103, 103, 103, 0.777);
     cursor: pointer;
     transition: all 0.3s;
 }
 
 .single-option:hover {
-    box-shadow: 0 4px 8px 0 #0095ff15, 0 6px 20px 0, #0095ff52;
+    box-shadow: 0 4px 8px 0 rgb(255, 255, 255),
+        0 6px 20px 0 rgb(255, 255, 255);
 }
 
 .single-option>p {
@@ -47,7 +63,7 @@
 }
 
 .single-option>.MuiSvgIcon-root {
-    color: rgba(49, 119, 240, 0.8);
+    color: rgba(255, 255, 255, 0.8);
     width: 20px;
 }
 
@@ -62,9 +78,10 @@
     display: flex;
     flex-direction: column;
     padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-        0 6px 20px 0 rgba(66, 42, 42, 0.19);
+    background-color: #444;
+    /* Dark background */
+    box-shadow: 0 4px 8px 0 rgba(220, 220, 220, 0.634),
+        0 6px 20px 0 rgb(221, 221, 221);
     border-radius: 3px;
 }
 
@@ -76,12 +93,44 @@
 .input-field>p {
     font-size: 1.1rem;
     margin: 10px 0;
+    color: #fff;
+    /* Light text color */
 }
 
 .input-field>input {
     padding: 10px;
-    border: 1px solid #0095ff8e;
-    background-color: transparent;
+    border: 1px solid rgba(0, 149, 255, 0.56);
+    background-color: #333;
+    /* Dark background */
     border-radius: 3px;
     outline: none;
+    color: #fff;
+    /* Light text color */
+}
+
+.input-field>input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+    /* Light placeholder color */
+}
+
+button {
+    background: #0095ff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background: #007acc;
+}
+
+.toggle-register {
+    margin-top: 10px;
+    text-align: center;
+    color: #0095ff;
+    text-decoration: underline;
+    cursor: pointer;
 }

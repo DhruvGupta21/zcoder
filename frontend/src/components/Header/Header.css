@@ -90,7 +90,19 @@ header {
     height: 60px !important;
 }
 
-.header-right-container>.MuiSvgIcon-root {
+.calendar {
+    color: rgba(255, 255, 255, 0.534);
+    padding: 10px 5px;
+    margin: 0px 5px;
+    cursor: pointer;
+}
+
+.calendar:hover {
+    background-color: #ddd;
+    color: #000;
+}
+
+/* .header-right-container>.MuiSvgIcon-root {
     color: rgba(255, 255, 255, 0.534);
     padding: 10px 5px;
     margin: 0px 5px;
@@ -100,7 +112,7 @@ header {
 .header-right-container>.MuiSvgIcon-root:hover {
     background-color: #ddd;
     color: #000;
-}
+} */
 
 @media screen and (max-width: 760px) {
     .header-middle {

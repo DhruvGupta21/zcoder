@@ -1,3 +1,4 @@
+/* Existing CSS for the sidebar */
 .sidebar {
     display: flex;
     padding: 20px 0px 10px 10px;
@@ -5,8 +6,25 @@
     flex: 0.5;
     max-width: 200px;
     border-right: 1px solid #ddd;
+    position: relative;
+    /* Add position relative to position the stars */
 }
 
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+/* The rest of your CSS */
 .sidebar-container {
     margin: 10px 0;
     display: flex;
@@ -37,7 +55,8 @@
 .sidebar-option-name>.MuiSvgIcon-root {
     font-size: 18px;
     margin-right: 5px;
-    color: rgba(245, 162, 9);
+    color: rgb(46, 46, 46);
+    animation: fadeInOut 1.5s infinite;
 }
 
 .sidebar-option-name>p {
@@ -51,7 +70,7 @@ a {
 }
 
 a:hover {
-    color: #000
+    color: #000;
 }
 
 .sidebar-option>p {
@@ -72,13 +91,14 @@ a:hover {
 }
 
 .link-tag:hover {
-    border-right: 5px solid rgba(245, 162, 9);
+    border-left: 3px solid rgb(59, 59, 59);
 }
 
 .link-tag>.MuiSvgIcon-root {
     font-size: 18px;
     margin-right: 5px;
-    color: rgba(245, 162, 9);
+    color: rgba(46, 46, 46);
+    animation: fadeInOut 1.5s infinite;
 }
 
 .tags {
