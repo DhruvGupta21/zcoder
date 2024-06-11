@@ -12,6 +12,7 @@ import { auth } from './firebase';
 import Calendar from './components/Calendar';
 import Profile from './components/Profile/Profile';
 import CodeEditor from './components/CodeEditor/CodeEditor';
+import ChatRoom from './components/ChatRoom/ChatRoom';
 
 function PrivateRoute({ element: Element, ...rest }) {
   const user = useSelector(selectUser);
@@ -54,8 +55,7 @@ function App() {
           <Route path="/calendar" element={<PrivateRoute element={Calendar} />} />
           <Route path="/profile" element={<PrivateRoute element={Profile} />} />
           <Route path="/zcoderIDE" element={<PrivateRoute element={CodeEditor} />} />
-
-
+          <Route path="/chatRoom" element={<PrivateRoute element={ChatRoom} />} />
         </Routes>
       </Router>
     </div>

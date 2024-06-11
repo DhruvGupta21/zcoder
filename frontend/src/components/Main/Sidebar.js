@@ -65,7 +65,7 @@ function Sidebar() {
             </div>
             <div className='link'>
               <div className='link-tag'>
-                <Link>Join a room</Link>
+                <Link to='/chatRoom'>Join a room</Link>
               </div>
             </div>
           </div>
